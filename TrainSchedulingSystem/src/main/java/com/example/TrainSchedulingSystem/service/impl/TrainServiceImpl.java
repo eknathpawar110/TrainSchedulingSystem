@@ -64,22 +64,6 @@ public class TrainServiceImpl implements TrainService {
     public final void updateTrain(AddOrUpdateTrainRequest updateTrainRequest) {
         removeTrain(RemoveTrainRequest.builder().number(updateTrainRequest.getNumber()).build());
         addTrain(updateTrainRequest);
-//        Optional<Train> trainOptional = trainRepository.findByNumber(updateTrainRequest.getNumber());
-//        trainStationRepository.deleteByTrain(trainOptional.get());
-//        Train train = trainOptional.get();
-//        train.setName(updateTrainRequest.getName());
-//        train = trainRepository.save(train);
-//        List<TrainStation> trainStationList = new ArrayList<>();
-//        for(int i = 0; i < updateTrainRequest.getStations().size(); i++){
-//            Station station = stationService.getStationByName(updateTrainRequest.getStations().get(i).trim());
-//            TrainStation trainStation = TrainStation.builder()
-//                    .sequenceNumber(i)
-//                    .train(train)
-//                    .station(station)
-//                    .build();
-//            trainStationList.add(trainStation);
-//        }
-//        trainStationRepository.saveAll(trainStationList);
     }
 
     @Override
